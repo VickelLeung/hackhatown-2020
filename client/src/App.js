@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-
+import {LoginCompany} from "../src/pages/company/LoginCompany";
 
 function App() {
   return (
@@ -11,7 +11,6 @@ function App() {
        <Wrapper>
          <Title>Hello there</Title>
        </Wrapper>
-       
      </div>
     </div>
   );
