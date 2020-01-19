@@ -14,8 +14,9 @@ class LandingPages extends Component{
 
                 <Subtitle>Are you an employee or Company? Click login below</Subtitle>
                 <Link to="/login" style={{textDecoration:"none"}}>
-                    <Button variant="contained">Login</Button>
+                    <MyButton variant="contained">Login</MyButton>
                 </Link>
+                
 
                 <Description>Have you ever wondered how many tons of foods we wasted per years? We waste so much foods in one year that we can used it to actually feeds at least 20% of a country population. It is for that 
                     reason that this applications is perfect for those who needs foods and also for those who wish to help the environment. If you are a company, restaurants or any form of food service then we will gadly accept your food donations.
@@ -38,6 +39,7 @@ export {LandingPages};
 
 const Wrapper = styled.div`
 text-align:center;
+background: #84CEEB
 `;
 
 const Title = styled.h1``;
@@ -52,7 +54,16 @@ flex-direction: row;
 align-items:center;
 justify-content: center;
 `;
-
 const Subtitle = styled.h2`
 margin: 2% 0;
 `;
+
+const MyButton = styled(Button)({
+    background: 'linear-gradient(45deg, #5680E9 5%, #C1C8E4 65%)',
+    border: 0,
+    borderRadius: 3,
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+  });

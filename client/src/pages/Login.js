@@ -13,14 +13,14 @@ class Login extends Component {
 
     render(){
 let displayEmployee = <FormWrapper>
-    <Title>Login as Employee</Title>
+    <Title>Login as Staff Member</Title>
         <Input >Username</Input>
         <Input >Password</Input>
         <Button>Submit</Button>
         </FormWrapper>
 
 let displayCompany = <FormWrapper>
-    <Title>Login as Company</Title>
+    <Title>Login as Restaurant</Title>
         <Input >Username</Input>
         <Input >Password</Input>
         <Button>Submit</Button>
@@ -29,7 +29,7 @@ let displayCompany = <FormWrapper>
     return(
         <Wrapper>
            <button onClick={()=> this.setState({isEmployee: !this.state.isEmployee})}>
-              Switch login to {this.state.isEmployee ? "Employee" : "Company"} </button>
+              Switch login to {this.state.isEmployee ? "Staff Member" : "Restaurant"} </button>
 
            {this.state.isEmployee? displayEmployee : displayCompany}
 
