@@ -1,11 +1,12 @@
 import React, {Component} from "react";
+import {SideContainer} from "../../components/SideContainer";
+import styled from 'styled-components';
 
 class PickupList extends Component{
     render(){
-        return(
-            <div>
-                {/* Side bars with companys lists */}
-                {/* Cards components with lists of companys */}
+        return(<div>
+                <Title>Pick up lists</Title>
+               <SideContainer />
             </div>
         )
     }
@@ -13,3 +14,4 @@ class PickupList extends Component{
 
 export {PickupList};
 
+const Title = styled.div``;
