@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-
 class TruckLocation extends Component{
     render(){
         return(
