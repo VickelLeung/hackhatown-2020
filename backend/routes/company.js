@@ -40,9 +40,9 @@ router.route('/register').post((req, res)=>{
 //   }
 
 //   console.log("is: " + isValid);
-Company.findOne({ username: req.body.username }).then(user => {
+Company.findOne({ email: req.body.email }).then(user => {
     if (user) {
-      return res.status(400).json({ username: "Username already exists" });
+      return res.status(400).json({ email: "email already exists" });
     } else {
 
         const companyName = req.body.companyName;
