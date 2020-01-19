@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from "styled-components";
-import {LoginCompany} from "../src/pages/company/LoginCompany";
+import {PickupList} from "../src/pages/staff/PickupList";
 
 function App() {
   return (
     <div className="App">
      <div>
-       <p>Homepage</p>
+       {/* <p>Homepage</p> */}
 
-       <Wrapper>
+       {/* <Wrapper>
          <Title>Hello there</Title>
-       </Wrapper>
+       </Wrapper> */}
+       <PickupList/>
      </div>
     </div>
   );
