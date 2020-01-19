@@ -23,23 +23,24 @@ router.route('/foodType').get((req, res)=>{
     .catch(err => res.status(400).json("Error: " + err));
 })
 
-router.route('/love/:id').get((req, res)=>{
+// Categories endpoints
+router.route('/email/:email').get((req, res)=>{
+  Company.find({email: req.params.email})
+  .then(post => res.json(post)) //return as json
+  .catch(err => res.status(400).json("Error: " + err));
+})
+
+router.route('/:id').delete((req, res)=>{
     let id = req.params.id;
-    Company.find({_id: id})
-    .then(post => res.json(post)) //return as json
+    Company.findByIdAndRemove({_id: id}, ()=>{
+    }).then(post => res.json(post)) //return as json
     .catch(err => res.status(400).json("Error: " + err));
 })
 
 //add posts
 router.route('/register').post((req, res)=>{
     console.log("req: " + req.body);
-// const { errors, isValid } = validateRegisterInput(req.body);
-// Check validation
-//   if (!isValid) {
-//     return res.status(400).json("error" + errors);
-//   }
 
-//   console.log("is: " + isValid);
 Company.findOne({ email: req.body.email }).then(user => {
     if (user) {
       return res.status(400).json({ email: "email already exists" });
@@ -112,8 +113,9 @@ router.post("/login", (req, res) => {
             },
             (err, token) => {
               res.json({
+                email:email,
                 success: true,
-                token: "Bearer " + token
+                token: token
               });
             }
           );
@@ -126,11 +128,9 @@ router.post("/login", (req, res) => {
     });
   });
 
-
-
 router.route('/updatepickup/:id').put((req, res)=>{
     let isPickup = req.body.isPickup;
-    Post.findByIdAndUpdate({ _id: req.params.id}, {$set: {isPickup: isPickup}})
+    Company.findByIdAndUpdate({ _id: req.params.id}, {$set: {isPickup: isPickup}})
     .then(post => res.json(post)) //return as json
     .catch(err => res.status(400).json("Error: " + err));
 })
