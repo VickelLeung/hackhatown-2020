@@ -45,12 +45,12 @@ class  App extends Component{
     <Provider store={store} >
       <Router>
         <div className="App">
-        {/* <NavigationBar /> */}
-        <Route exact path="/" component={LandingPages} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/registercompany" component={RegisterCompany} />
-        <Route exact path="/viewlistings" component={ViewListings} />
-        <Route exact path="/pickuplist" component={PickupList} />
+          {/* <NavigationBar /> */}
+          <Route exact path="/" component={LandingPages} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/registercompany" component={RegisterCompany} />
+          <Route exact path="/viewlistings" component={ViewListings} />
+          <Route exact path="/pickuplist" component={PickupList} />
       </div>
       </Router>
     </Provider>
